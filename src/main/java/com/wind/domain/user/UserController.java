@@ -1,10 +1,6 @@
 package com.wind.domain.user;
 
-import com.wind.config.exception.ErrorType;
-import com.wind.config.exception.ServerApiException;
-import com.wind.domain.user.UserService;
 import com.wind.dto.UserDto;
-import com.wind.domain.user.UserEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
