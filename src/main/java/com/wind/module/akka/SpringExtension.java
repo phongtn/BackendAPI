@@ -8,14 +8,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class SpringExtension extends AbstractExtensionId<SpringExtension.SpringExt> {
 
-    private static vn.com.viettel.vds.actor.SpringExtension instance = new vn.com.viettel.vds.actor.SpringExtension();
+    private static SpringExtension instance = new SpringExtension();
 
     @Override
     public SpringExt createExtension(ExtendedActorSystem system) {
         return new SpringExt();
     }
 
-    public static vn.com.viettel.vds.actor.SpringExtension getInstance() {
+    public static SpringExtension getInstance() {
         return instance;
     }
 
