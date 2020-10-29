@@ -18,7 +18,7 @@ spring:
 
 logging:
   level:
-    org.zalando.logbook: TRACE
+    org.zalando.logbook: off
 logbook:
   exclude:
     - /actuator/health

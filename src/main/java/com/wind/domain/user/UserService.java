@@ -1,7 +1,10 @@
 package com.wind.domain.user;
 
+import akka.actor.ActorRef;
+import akka.actor.ActorSystem;
 import com.wind.config.exception.ServerApiException;
 import com.wind.dto.UserDto;
+import com.wind.module.akka.SpringProps;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -11,8 +14,16 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-    public UserService(UserRepository userRepository) {
+    private final ActorSystem actorSystem;
+
+    public UserService(UserRepository userRepository, ActorSystem actorSystem) {
         this.userRepository = userRepository;
+        this.actorSystem = actorSystem;
+    }
+
+    public void tellUserActor(String message) {
+        ActorRef actorRef = actorSystem.actorOf(SpringProps.create(actorSystem, UserActor.class));
+        actorRef.tell(message, ActorRef.noSender());
     }
 
     public UserEntity add(UserDto userDto) {

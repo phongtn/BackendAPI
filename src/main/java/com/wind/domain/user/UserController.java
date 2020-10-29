@@ -4,7 +4,6 @@ import com.wind.dto.UserDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
 @RestController
 @RequestMapping(value = "/users")
 public class UserController {
@@ -13,6 +12,11 @@ public class UserController {
 
     public UserController(UserService userService) {
         this.userService = userService;
+    }
+
+    @GetMapping("/actor/{message}")
+    public void tellUserActor(@PathVariable String message) {
+        userService.tellUserActor(message);
     }
 
     @PostMapping("/add")
