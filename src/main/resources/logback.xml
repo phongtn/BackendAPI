@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+    <property name="LOG_FILE" value="${application.home:-.}/logs/app.log"/>
+    <property name="LOG_FILE_EXCEPTION" value="${application.home:-.}/logs/exception.log"/>
+
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+    <include resource="org/springframework/boot/logging/logback/file-appender.xml"/>
+    <include resource="exception-appender.xml"/>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+<!--        <appender-ref ref="FILE_EXCEPTION"/>-->
+    </root>
+
+    <logger name="org.springframework.web" level="INFO"/>
+    <logger name="com.netflix.loadbalancer" level="WARN"/>
+    <logger name="com.netflix.config" level="WARN"/>
+    <logger name="org.springframework.cloud.config.client" level="WARN"/>
+    <logger name="com.netflix.discovery.shared.resolver" level="WARN"/>
+    <!--    <logger name="org.hibernate.SQL" level="DEBUG"/>-->
+    <!--    <logger name="org.hibernate.type" level="TRACE"/>-->
+    <logger name="com.wind.config.exception.RestExceptionHandler" level="INFO" additivity="false" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="FILE_EXCEPTION"/>
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+</configuration>

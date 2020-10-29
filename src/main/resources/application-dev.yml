@@ -1,0 +1,42 @@
+spring:
+  profiles: dev
+  application:
+    name: BackEndService-Dev-Mode
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    # https://vladmihalcea.com/the-open-session-in-view-anti-pattern/
+    open-in-view: false
+
+  datasource:
+    url: ${MYSQL_HOST}
+    username: ${MYSQL_USER}
+    password: ${MYSQL_PASS}
+
+logging:
+  level:
+    org.zalando.logbook: TRACE
+logbook:
+  exclude:
+    - /actuator/health
+  filter.enabled: true
+
+external:
+  service:
+    sample:
+      endpoint: https://jsonplaceholder.typicode.com/
+      proxy-host:
+      proxy-port:
+      connection:
+        connection-pool:
+          default-max-per-route: 30
+          max-total: 300
+        connection-request-timeout: 60000
+        connect-timeout: 60000
+management:
+  endpoint:
+    health:
+      show-components: always
