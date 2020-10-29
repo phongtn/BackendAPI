@@ -1,6 +1,6 @@
-I have a long time develop backend application based on Play Framework. 
-Last year I change my job, So I come back to use Spring Framework for some projects in my company. 
-Spring Framework has come a long way, with more features, more tools .etc 
+I have a long time develop backend application based on Play Framework.  
+Last year I change my job, So I come back to use Spring Framework for some projects in my company.   
+Spring Framework has come a long way, with more features, more tools .etc  
 And now I just want a clean framework with some a little dependence. 
 So, I make this project.
 
@@ -19,7 +19,7 @@ These additional references should also help you:
 
 ### Development
 
-I added spring-boot-devtools to Automatic Restart. Applications that use spring-boot-devtools automatically restart whenever files on the classpath change.  
+I added spring-boot-devtools to Automatic Restart. Applications that use spring-boot-devtools automatically restart whenever files on the classpath change.   
 This project use IntelliJ IDEA IDE 2019.3. So, when you build the project (Build +→+ Build Project) will triggers a event restart.
 
 ### Reference Documentation
