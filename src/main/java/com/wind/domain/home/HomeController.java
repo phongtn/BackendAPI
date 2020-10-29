@@ -1,4 +1,4 @@
-package com.wind.controller;
+package com.wind.domain.home;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;

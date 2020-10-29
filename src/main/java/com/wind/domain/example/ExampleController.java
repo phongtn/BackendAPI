@@ -1,4 +1,4 @@
-package com.wind.controller;
+package com.wind.domain.example;
 
 import com.wind.dto.SampleDto;
 import com.wind.external.sample.ExternalSampleService;
